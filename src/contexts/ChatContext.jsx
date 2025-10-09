@@ -51,13 +51,13 @@ export const ChatProvider = ({ children }) => {
   ];
 
   const [contacts, setContacts] = useState(() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem("contacts"));
-      return saved &&  defaultContacts;
-    } catch {
-      return defaultContacts;
-    }
-  });
+  try {
+    const saved = JSON.parse(localStorage.getItem("contacts"));
+    return saved || defaultContacts; 
+  } catch {
+    return defaultContacts;
+  }
+});
 
   const [activeChatId, setActiveChatId] = useState(null);
 
