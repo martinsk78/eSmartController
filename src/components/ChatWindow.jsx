@@ -44,17 +44,17 @@ export default function ChatWindow({ contact }) {
             )}
 
             <div
-              className={`px-4 py-2 rounded-lg max-w-[70%] shadow-sm ${
-                m.sender === "me"
-                  ? "bg-indigo-400 text-gray-50 rounded-br-none"
-                  : "bg-gray-100 text-gray-800 rounded-bl-none"
-              }`}
-            >
-              <span>{m.text}</span>
-              <small className={`block text-xs mt-1 ${m.sender == 'me' ? 'text-white' : 'text-gray-800'}  text-right`}>
-                {m.time}
-              </small>
-            </div>
+  className={`px-4 py-2 rounded-lg max-w-[70%] shadow-sm break-words whitespace-pre-wrap ${
+    m.sender === "me"
+      ? "bg-indigo-400 text-gray-50 rounded-br-none"
+      : "bg-gray-100 text-gray-800 rounded-bl-none"
+  }`}
+>
+  <span>{m.text}</span>
+  <small className={`block text-xs mt-1 ${m.sender === 'me' ? 'text-white' : 'text-gray-800'} text-right`}>
+    {m.time}
+  </small>
+</div>
           </div>
         ))}
       </div>
