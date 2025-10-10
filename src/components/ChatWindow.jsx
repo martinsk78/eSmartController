@@ -20,7 +20,7 @@ export default function ChatWindow({ contact }) {
   };
 
   return (
-    <div className="flex flex-col h-full  rounded-xl shadow-sm">
+    <div className="flex flex-col pb-16 md:pb-0 h-full md:h-[40rem] overflow-hidden  shadow-sm">
       <div className="flex-1 overflow-y-auto p-4 space-y-3" style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",      

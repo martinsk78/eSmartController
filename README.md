@@ -1,16 +1,51 @@
-# React + Vite
+# TP Final Frontend - MiniChat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del Proyecto
 
-Currently, two official plugins are available:
+MiniChat es una **aplicación web de mensajería** desarrollada en React, inspirada en WhatsApp.  
+Permite gestionar contactos, enviar y recibir mensajes ficticios, y mantener conversaciones separadas por contacto. La aplicación está pensada para ser **totalmente responsiva** y funcionar en dispositivos desde 320px hasta 2000px de ancho.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Funcionalidades principales
 
-## React Compiler
+- Listado de contactos con **avatar y nombre**.
+- Visualización de conversaciones con **mensajes diferenciados por emisor**.
+- Envío de mensajes mediante un **formulario controlado**.
+- Búsqueda de contactos mediante **parámetros de búsqueda** (`react-router-dom`).
+- Navegación entre páginas usando **React Router**.
+- Soporte de **estados y contextos** para manejar contactos y conversaciones.
+- **Diseño responsivo y accesible**, con colores y tipografía legibles.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Librerías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/) - Librería principal para el desarrollo del frontend.
+- [React Router DOM](https://reactrouter.com/) - Para enrutamiento y navegación entre páginas.
+- [TailwindCSS](https://tailwindcss.com/) - Para estilos rápidos, responsivos y consistentes.
+- [Heroicons](https://heroicons.com/) - Iconos para mejorar la interfaz.
+- [uuid](https://www.npmjs.com/package/uuid) - Para generar IDs únicos para los contactos.
+
+---
+
+## Estructura del Proyecto
+
+- **src/contexts/ChatContext.jsx** → Contexto global para manejar contactos y chats.
+- **src/components/** → Componentes reutilizables como `ChatWindow`, `ContactItem`, `NewContactForm`.
+- **src/pages/** → Páginas principales: `Home.jsx` y `ChatPage.jsx`.
+- **src/App.jsx** → Configuración de rutas y layout general.
+- **src/index.jsx** → Entrada principal de React.
+
+---
+
+## Desafíos y dificultades
+
+1. **Persistencia de datos en Vercel/SSR:**  
+   Al utilizar `localStorage`, hubo que asegurarse de cargar los datos solo en el cliente mediante `useEffect`, ya que en el build no existe `localStorage`.
+2. **Mensajes estilo WhatsApp:**  
+   Se debió agregar la propiedad `sender` a cada mensaje para poder diferenciarlos y alinearlos a la izquierda o derecha según el remitente.
+3. **Responsividad y accesibilidad:**  
+   Ajustar la interfaz para que funcione correctamente desde móviles pequeños hasta pantallas grandes, evitando combinaciones de colores con bajo contraste.
+4. **Integración de imágenes de avatar:**  
+   Se usaron URLs externas de `randomuser.me` para asegurar que los avatares se carguen correctamente en todos los entornos.
+
+---

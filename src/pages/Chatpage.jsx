@@ -16,8 +16,8 @@ export default function ChatPage() {
     );
 
   return (
-    <div className="flex items-center justify-center flex-col w-full">
-      <div className="w-[95%] md:w-1/2 rounded-lg h-[40rem] mt-20 ">
+    <div className="flex items-center justify-center flex-col h-full w-full overflow-hidden">
+      <div className="w-full md:w-1/2 rounded-lg h-full  md:mt-20 ">
       <header className="flex items-center justify-between px-6 py-3 bg-gray-100 border-b border-gray-200 shadow-sm rounded-t-xl">
         <h2 className="text-lg font-semibold text-gray-800">
           {contact.name}
